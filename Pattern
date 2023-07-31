@@ -1,0 +1,37 @@
+//*Problem Description :
+
+Take an integer N as input, print the corresponding pattern for N.
+For example if N = 5 then pattern will be like:
+____*
+___**
+__***
+_****
+*****
+Note : Here '_' represents space for explanation purpose only. You have to print space in your code.*//
+
+
+//Code: 
+
+import java.lang.*;
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        // YOUR CODE GOES HERE
+        // Please take input and print output to standard input/output (stdin/stdout)
+        // DO NOT USE ARGUMENTS FOR INPUTS
+        // E.g. 'Scanner' for input & 'System.out' for output
+        Scanner maths = new Scanner(System.in);
+        int N = maths.nextInt();
+        for ( int row =1; row <=N; row++){
+            for (int column =1; column <=N-row; column++){
+                System.out.print(" ");
+                
+            }
+            for ( int columnn = 1; columnn <= row; columnn++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    }
+}
