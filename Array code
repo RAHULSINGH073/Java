@@ -1,0 +1,111 @@
+import java.lang.*;
+import java.util.*;
+public class Main {
+    public static int freqK(int arr[], int k){
+      int n = arr.length;
+      int freq = 0;
+      for(int i = 0; i<n; i++){
+        if(arr[i] == k){
+          freq += 1;
+        }
+      }
+      return freq;
+    }
+    
+  public static int[] freqCount(int arr[]){
+    int n = arr.length;
+    int[] ans = new int[n];
+    for(int i = 0; i < n; i++){
+      ans[i] = freqK(arr, arr[i]);
+    }
+    return ans;
+  }
+  
+  public static void main(String[] args) {
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    int[] arr = new int[n];
+    for(int i = 0; i<n; i++){
+      arr[i] = scn.nextInt();
+    }
+    /*
+    n = 5
+    i   i < n     arr[i] <-- input 
+    0   0 < 5     arr[0] = <-- input
+    1   1 < 5     arr[1] = <-- input
+    2   2 < 5     arr[2] = <-- input
+    3   3 < 5     arr[3] = <-- input
+    4   4 < 5     arr[4] = <-- input
+    5   5 < 5 --- come out of the loop
+    */
+    // for(int i = 0; i < n; i++){
+    //   System.out.print(arr[i] + " ");
+    // }
+    /*
+    Q1: Take an integer array of size n as input 
+    print its sum 
+    */
+    // int sum = 0;
+    // for(int i = 0; i < n; i++){
+    //   sum += arr[i];
+    // }
+    // System.out.print(sum);
+    /*
+    Q2: Take an integer array as input 
+    and print its maximum value 
+    arr = [3, 7, 2, 10, 1]
+    Output: Max is 10 
+    */
+    // int max = 0; // assumed max -> incorrect assumption 
+    // int max = arr[0]; // assumption is correct 
+    // // 2 Possibilities 
+    // // Assumption is correction -> We return correctly 
+    // // Assumption is wrong -> Max value will be updated 
+    // for(int i = 0; i<n; i++){
+    //   if(arr[i]>max){
+    //     max = arr[i];
+    //   }
+    // }
+    // System.out.print(max);
+    /*
+      [3, 7, 2, 10, 1]
+      i   i < n   max < arr[i]    max
+      0   0< 5    0 < 3           3
+      1   1< 5    3 < 7           7
+      2   2< 5    7 < 2           7
+      3   3< 5    7 < 10          10
+      4   4< 5    10 < 1          10 
+      5   5< 5 --------- exits 
+      [-3, -7, -2, -10, -1] -> Input 
+      i   i < n   max < arr[i]    max
+      0   0< 5    -3 < -3          -3
+      1   1< 5    -3 < -7          -3
+      2   2< 5    -3 < -2          -2
+      3   3< 5    -2 < -10         -2
+      4   4< 5    -2 < -1          -1
+      5   5< 5 --------- exits
+      Max still remains to be -1
+    */
+    /*
+    Q3: Take an integer array as input 
+    and print its minimum value 
+    arr = [3, 7, 2, 10, 1]
+    Output: Min is 1
+    */ 
+  //   int min = arr[0]; // assumption is correct 
+  //   // 2 Possibilities  
+  //   for(int i = 0; i<n; i++){
+  //     if(arr[i] < min){
+  //       min = arr[i];
+  //     }
+  //   }
+  //   System.out.print(min);
+  int[] ans = freqCount(arr);
+  for(int i = 0; i< ans.length; i++){
+    System.out.print(ans[i] + " ");
+  }
+  }
+  // Break 10:03
+  // extending till song completes :P 
+  
+}
